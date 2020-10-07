@@ -13,3 +13,6 @@ Things I would love to add
   - More Routes to get more than ips that are similar or if someone types something a bit off it can find closest (implmenting elastic search could help with this) 
   - Sharding the data. It was a pretty large data set and I could enchance performance
   - Add Api Versioning
+
+
+Note: There are ReadMe files for the client and server folders
