@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+body {
+    background: #f6f7f9;
+    font-family: 'proxima-nova', sans-serif;
+    -webkit-font-smoothing: antialiased !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif !important;
+} 
+
+ul {
+  list-style-type:none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.ip-form-header{
+  margin-top: 10px; 
+}
+.ip-card {
+  border-radius: 10px;
+}
+.header, .footer {
+  background-color: #101940;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 10px 10px 10px 10px;
+
+}
+
+.footer {
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  font-size: 12px;
+}
+
+.footer a {
+  color:#FE7A38;
+}
+
+.ip-list {
+  height: 200px;
+  overflow: scroll;
+  height: 600px;
+}
+
+.ip-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ip-form, .users{
+  height: 88%;
+}
+.main{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  padding-top: 35px;
+}
+
+
+.ip-section{
+  flex-basis: 20%;
+}
+.form-group {
+  padding-left: 32px;
+}
+.search-section {
+  width: 10%;
+}
+.search-btn{
+  height: 36px;
+  border-radius: 4;
+}
+.search-input {
+  height: 36px;
+  width: 73%;
+  border-radius: 4;
+  margin-right: 10px;
+}
