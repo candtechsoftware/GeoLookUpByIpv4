@@ -1,14 +1,21 @@
-version: "3"
-
+version: '3'
 services:
-  server:
-    build: ./server
+  nodejs-server:
+    build:
+      context: ./server
     ports:
       - "9090:9090"
-    container_name: ip4vlookupaip
-  client:
-    build: ./client
+    container_name: ipv4lookup-api
+    volumes:
+       - ./server:/usr/app/api
+       - /usr/app/api/node_modules
+  react-ui:
+    build:
+      context: ./client
     ports:
       - "3000:3000"
-    container_name: ipv4lookupclient
-    
+    container_name: ipv4lookup-ui
+    stdin_open: true
+    volumes:
+       - ./client:/usr/app/ui
+       -  /usr/app/ui/node_modules

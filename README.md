@@ -1,5 +1,9 @@
 # GeoLookUpByIpv4
 
+### To run 
+`docker-compose up` in root directory
+You can also run them locally without docker. Be sure to have node and npm installed. 
+
 ## Client Side
 Written in react and used Redux for state management
 The Essential Functionality to search an Ip Address is there but I have added the 

@@ -1,12 +1,11 @@
-FROM node:11-alpine
+FROM node:12.10.0-alpine
 
-WORKDIR /server
+WORKDIR /usr/app/api
 
-COPY package.json ./
-COPY package-lock.json ./
+COPY package*.json ./
 
 RUN npm install
 
-EXPOSE 8000
+EXPOSE 9090 
 
-CMD [ "node", "app.js" ]
+CMD ["npm", "run", "dev"]

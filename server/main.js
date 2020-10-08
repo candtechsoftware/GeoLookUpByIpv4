@@ -19,11 +19,9 @@ app.get('/', (req, res)=> {
 // @access public
 app.get("/api/ips/:ip", async (req, res) => {
 	try {
-		const resp = await Reader.open("./GeoLite2-City.mmdb");
+		const resp = await Reader.open(require('path').resolve(__dirname, "./GeoLite2-City.mmdb"));
 		const ipAddr = req.params.ip; // Grabing the url paremeter
 		const ipLocationInfo = resp.city(ipAddr); // Looiking up the ip and getting the info from the db file
-
-		console.log();
 
 		// Made a nice and clean format of the data as the db returns alot more data than this
 		const returnObj = {

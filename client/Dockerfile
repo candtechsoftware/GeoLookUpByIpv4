@@ -1,11 +1,11 @@
-FROM node:11-alpine
+FROM node:12.10.0-alpine
 
-WORKDIR /client
+WORKDIR /usr/app/ui
 
-COPY package.json ./
+COPY package*.json ./
 
 RUN npm install
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]
