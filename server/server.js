@@ -9,16 +9,19 @@ app.use(express.json());
 
 // Defining routes
 
+
 // @route GET api/ip/:ip
 // @desc  Get Location Data by Ip Address
 // @access public
 app.get("/api/ips/:ip", async (req, res) => {
 	try {
 		const resp = await Reader.open("./GeoLite2-City.mmdb");
-		const ipAddr = req.params.ip;
-		const ipLocationInfo = resp.city(ipAddr);
+		const ipAddr = req.params.ip; // Grabing the url paremeter
+		const ipLocationInfo = resp.city(ipAddr); // Looiking up the ip and getting the info from the db file
 
 		console.log();
+
+		// Made a nice and clean format of the data as the db returns alot more data than this
 		const returnObj = {
 			ip: ipAddr,
 			city: ipLocationInfo.city.names.en,
