@@ -1,8 +1,14 @@
 # GeoLookUpByIpv4
 
+![Image of Yaktocat](https://raw.githubusercontent.com/candtechsoftware/GeoLookUpByIpv4/master/screenshot.png)
+
 ### To run 
-`docker-compose up` in root directory
+run `docker-compose up` in root directory
 You can also run them locally without docker. Be sure to have node and npm installed. 
+run`npm i` in bothdirectories to install the dependencies
+run `npm run dev` to run server in "hot reload" mode with nodemon or `npm run start`
+run `npm run start` to run the react client side app
+
 
 ## Client Side
 Written in react and used Redux for state management
