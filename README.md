@@ -2,6 +2,10 @@
 
 ![Image of Yaktocat](https://raw.githubusercontent.com/candtechsoftware/GeoLookUpByIpv4/master/screenshot.png)
 
+### Note 
+The database info comes from the free db file not the live database as of 10/07/2020. So the application will may not be up to date in the future. 
+
+
 ### To run 
 run `docker-compose up` in root directory
 You can also run them locally without docker. Be sure to have node and npm installed. 
