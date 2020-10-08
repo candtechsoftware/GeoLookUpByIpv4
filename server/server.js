@@ -1,8 +1,7 @@
-const express = require('express');
-const Reader = require('@maxmind/geoip2-node').Reader;
-const cors = require('cors');
-require('dotenv').config()
-
+const express = require("express");
+const Reader = require("@maxmind/geoip2-node").Reader;
+const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
@@ -13,28 +12,24 @@ app.use(express.json());
 // @route GET api/ip/:ip
 // @desc  Get Location Data by Ip Address
 // @access public
- app.get("/api/ips/:ip", async (req, res) => {
-  try {
-  const resp = await Reader.open('./GeoLite2-City.mmdb');
-  const ipAddr = req.params.ip;
-  const ipLocationInfo = resp.city(ipAddr);
-      
-  console.log();
-  const returnObj = {
-    ip: ipAddr,
-    location: {
-      city: ipLocationInfo.city.names.en,
-      latitude: ipLocationInfo.location.latitude,
-      longitude: ipLocationInfo.location.longitude,
-    }
-  }
-  res.json(returnObj);
+app.get("/api/ips/:ip", async (req, res) => {
+	try {
+		const resp = await Reader.open("./GeoLite2-City.mmdb");
+		const ipAddr = req.params.ip;
+		const ipLocationInfo = resp.city(ipAddr);
 
-  } catch (err) {
-    console.log(err);
-  }
+		console.log();
+		const returnObj = {
+			ip: ipAddr,
+			city: ipLocationInfo.city.names.en,
+			latitude: ipLocationInfo.location.latitude,
+			longitude: ipLocationInfo.location.longitude,
+		};
+		res.json(returnObj);
+	} catch (err) {
+		res.status(400).send(`Server Error ${err.message}`);
+	}
 });
 
-
 const PORT = process.env.PORT || 9090;
-app.listen(PORT, ()=> console.log(`Server is running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

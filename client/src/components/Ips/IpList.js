@@ -1,18 +1,41 @@
-import React from 'react';
-import IpInfo from './IpInfo';
+import React from "react";
+import IpInfo from "./IpInfo";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { setCurrent, clearIpInfo } from "../../redux/actions/ipinfo";
 
-const IpList = ({ipList , ipClickHandler}) => {
-  return (
-    <div className="ip-list">
-    <ul>
-      {ipList.map((ip, index) => (
-        <a key={ip.geoname_id} onClick={e => ipClickHandler(e, index)} href='/'>
-        <IpInfo key={index} ip={ip} />
-        </a>
-      ))}
-    </ul>
-    </div>
-  )
+const IpList = ({ ipList, setCurrent, clearIpInfo }) => {
+	return (
+		<div className='ip-list'>
+			{ipList.length > 0 && (
+				<button className='btn btn-danger' onClick={clearIpInfo}>
+					Clear
+				</button>
+			)}
+			<ul>
+				{ipList.map((ip, index) => (
+					<a
+						key={index}
+						onClick={(e) => {
+							e.preventDefault();
+							setCurrent(ip);
+						}}
+						href='/'>
+						<IpInfo key={index} ip={ip} />
+					</a>
+				))}
+			</ul>
+		</div>
+	);
 };
 
-export default IpList;
+IpList.propTypes = {
+	ipList: PropTypes.array.isRequired,
+	setCurrent: PropTypes.func.isRequired,
+	clearIpInfo: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+	ipList: state.ip.ipList,
+});
+export default connect(mapStateToProps, { setCurrent, clearIpInfo })(IpList);
