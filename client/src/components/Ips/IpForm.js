@@ -13,6 +13,8 @@ const IpForm = ({ getIpInfo }) => {
 	const onChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: [e.target.value] });
 	};
+
+	// Regex validation of ip address. I would like to abstract into 
 	const ValidateIPaddress = (ipaddress) => {
 		if (
 			/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
@@ -23,6 +25,8 @@ const IpForm = ({ getIpInfo }) => {
 		}
 		return false;
 	};
+
+	
 	const onSubmit = (e) => {
 		e.preventDefault();
 		if (!ValidateIPaddress(ip)) {

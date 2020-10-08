@@ -12,12 +12,12 @@ export default function (state = initialState, action) {
 
 	switch (type) {
 		case GET_IPINFO:
-			return {
-				...state,
-				ipList: [...state.ipList, payload],
-				currentIp: payload,
-				loading: false,
-			};
+				return {
+					...state,
+					ipList: [...state.ipList, payload],
+					currentIp: payload,
+					loading: false,
+				};
 		case CLEAR_IPINFO:
 			return {
 				ipList: initialState.ipList,

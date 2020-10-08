@@ -8,7 +8,7 @@ const IpList = ({ ipList, setCurrent, clearIpInfo }) => {
 	return (
 		<div className='ip-list'>
 			{ipList.length > 0 && (
-				<button className='btn btn-danger' onClick={clearIpInfo}>
+				<button className='btn btn-danger clear-btn' onClick={clearIpInfo}>
 					Clear
 				</button>
 			)}
