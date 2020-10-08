@@ -8,7 +8,12 @@ app.use(cors());
 app.use(express.json());
 
 // Defining routes
-
+app.get('/', (req, res)=> {
+	res.json({
+		messge: "Hello There! If you want to see your location info try querying /api/ips/<your ip address>",
+		status: 200 ,
+		})
+})
 // @route GET api/ip/:ip
 // @desc  Get Location Data by Ip Address
 // @access public
