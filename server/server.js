@@ -9,7 +9,6 @@ app.use(express.json());
 
 // Defining routes
 
-
 // @route GET api/ip/:ip
 // @desc  Get Location Data by Ip Address
 // @access public
