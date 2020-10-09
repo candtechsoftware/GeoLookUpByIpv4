@@ -32,6 +32,7 @@ li {
 }
 .ip-card {
 	border-radius: 10px;
+	margin-bottom: 20px;
 }
 .ip-section {
 	margin-left: 23px;
@@ -64,14 +65,6 @@ li {
 	border-radius: 4px;
 }
 
-.footer {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	font-size: 12px;
-}
-
 .footer a {
 	color: #fe7a38;
 }
@@ -100,10 +93,10 @@ li {
 }
 
 @media only screen and (max-width: 800px) {
-  .main {
-    display: block;
+	.main {
+		display: block;
 	}
-	.ip-list  {
+	.ip-list {
 		height: 200px;
 		margin-bottom: 10px;
 	}
