@@ -105,6 +105,10 @@ li {
 	.search-ip-header {
 		visibility: hidden;
 	}
+	.ip-section {
+		margin: auto;
+		width: 80%;
+	}
 }
 
 .search-section {
