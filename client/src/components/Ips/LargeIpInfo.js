@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 const LargeIpInfo = ({ currentIp, loading }) => {
 	return loading || currentIp === null ? (
 		<div className='conatainer'>
-			<h2 className='large-info-header'>Search Ip:</h2>
+			<h2 className='large-info-header search-ip-header'>Search Ip:</h2>
 		</div>
 	) : (
 		<div className='Info'>
